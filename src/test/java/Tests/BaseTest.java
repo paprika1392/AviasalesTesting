@@ -37,8 +37,8 @@ public class BaseTest {
 
         SelectionOfTicketsPageAviaSales actionSelectionOfTicketsPage = new SelectionOfTicketsPageAviaSales();
         actionSelectionOfTicketsPage.openCurrentUrl();
-//        actionSelectionOfTicketsPage.waitUntilPageIsLoaded();
-//        actionSelectionOfTicketsPage.closePriceAlert();
+        actionSelectionOfTicketsPage.waitPageLoaded();
+        actionSelectionOfTicketsPage.waitOpenAndCloseWindowPriceAlert();
         actionSelectionOfTicketsPage.clickSortingButton();
         actionSelectionOfTicketsPage.clickTripDurationButton();
 //        actionSelectionOfTicketsPage.clickSearchFlightsButton();

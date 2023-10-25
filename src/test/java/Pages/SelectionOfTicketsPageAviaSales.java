@@ -12,12 +12,14 @@ import java.awt.*;
 
 public class SelectionOfTicketsPageAviaSales {
 
+    public final By waitWindowPriceAlert = By.xpath("//div[text()= \"Price alert\"]");
+    public final By closeWindowPriceAlert = By.xpath("//span[text()= \"Close\"]/..");
     public final By waitPageLoaded = By.cssSelector(".loader__stripes");
-    public final By sortingButton = By.xpath("//div[text()='Sorting']");
+    public final By sortingButton = By.xpath("//div[text()='Sorting']/..");
     public final By tripDurationButton = By.xpath("//div[text()='Trip duration']");
-    public final By searchFlightsButton = By.xpath("//div[text()='Search flights']");
     public final By buttonClosePriceAlert = By.xpath("//span[text()='Close']");
     public final By clickCreatePriceAlert = By.cssSelector(".direction-subscriptions__btn-subs");
+    public final By durationElement = By.xpath("//div[contains(text(), 'Duration: ')]");
 
     public static void openCurrentUrl() {
         String strUrl = BrowserClass.getDriver().getCurrentUrl();
@@ -25,51 +27,50 @@ public class SelectionOfTicketsPageAviaSales {
 
     }
 
-    public SelectionOfTicketsPageAviaSales waitUntilPageIsLoaded() {
-        WebDriverWait wait = new WebDriverWait(BrowserClass.getDriver(), 20);
-//        WebElement element = BrowserClass.getDriver().findElement(waitPageLoaded);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(clickCreatePriceAlert));
-//        wait.until(ExpectedConditions.invisibilityOfElementLocated(clickCreatePriceAlert));
-        return this;
-    }
-
-
-    public SelectionOfTicketsPageAviaSales closePriceAlert() { // For popup PriceAlert
-
+    public SelectionOfTicketsPageAviaSales waitPageLoaded() {
         WebDriverWait wait = new WebDriverWait(BrowserClass.getDriver(), 15);
-        wait.until(ExpectedConditions.elementToBeClickable(clickCreatePriceAlert));
-        WebElement element = BrowserClass.getDriver().findElement(clickCreatePriceAlert);
-        Actions action = new Actions(BrowserClass.getDriver());
-        action.doubleClick(element).perform();
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(waitPageLoaded));
 
-//        WebDriverWait wait = new WebDriverWait(BrowserClass.getDriver(), 30);
-//        wait.until(ExpectedConditions.elementToBeClickable(buttonClosePriceAlert));
-//        BrowserClass.getDriver().findElement(buttonClosePriceAlert).click();
         return this;
     }
+
+    public SelectionOfTicketsPageAviaSales waitOpenAndCloseWindowPriceAlert() {
+        WebDriverWait wait = new WebDriverWait(BrowserClass.getDriver(), 70);
+        wait.until(ExpectedConditions.elementToBeClickable(waitWindowPriceAlert));
+
+        BrowserClass.getDriver().findElement(closeWindowPriceAlert).click();
+
+        return this;
+    }
+
 
     public SelectionOfTicketsPageAviaSales clickSortingButton() {
 
         WebDriverWait wait = new WebDriverWait(BrowserClass.getDriver(), 20);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(sortingButton));
-//        BrowserClass.getDriver().findElement(sortingButton).click();
+        wait.until(ExpectedConditions.elementToBeClickable(sortingButton));
+        BrowserClass.getDriver().findElement(sortingButton).click();
 
-        WebElement element = BrowserClass.getDriver().findElement(sortingButton);
-        JavascriptExecutor js = (JavascriptExecutor)BrowserClass.getDriver();
-        js.executeScript("arguments[0].click()",element);
+//        Actions act =  new Actions(BrowserClass.getDriver());
+//        act.moveToElement(BrowserClass.getDriver().findElement(sortingButton)).click().perform();
+
+//        WebElement element = BrowserClass.getDriver().findElement(sortingButton); // resolfe  with JS
+//        JavascriptExecutor js = (JavascriptExecutor)BrowserClass.getDriver();
+//        js.executeScript("arguments[0].click()",element);
 
         return this;
     }
 
     public SelectionOfTicketsPageAviaSales clickTripDurationButton() {
+        BrowserClass.getDriver().findElement(tripDurationButton).click();
 
-        BrowserClass.getDriver().findElement(tripDurationButton);
         return this;
     }
 
-    public SelectionOfTicketsPageAviaSales clickSearchFlightsButton() {
+    public SelectionOfTicketsPageAviaSales selectFastestTimeOnTickets() {
+        BrowserClass.getDriver().findElements(durationElement);
 
-        BrowserClass.getDriver().findElement(searchFlightsButton);
+
         return this;
     }
+
 }
