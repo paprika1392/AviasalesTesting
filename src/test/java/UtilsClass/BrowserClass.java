@@ -32,7 +32,6 @@ public class BrowserClass {
 
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-//        driver.manage().timeouts().implicitlyWait(IMP_WAIT, TimeUnit.SECONDS);
 
     }
 

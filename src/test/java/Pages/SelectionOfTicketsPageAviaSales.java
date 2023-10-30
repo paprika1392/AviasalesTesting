@@ -53,7 +53,7 @@ public class SelectionOfTicketsPageAviaSales {
 //        Actions act =  new Actions(BrowserClass.getDriver());
 //        act.moveToElement(BrowserClass.getDriver().findElement(sortingButton)).click().perform();
 
-//        WebElement element = BrowserClass.getDriver().findElement(sortingButton); // resolfe  with JS
+//        WebElement element = BrowserClass.getDriver().findElement(sortingButton); // resolve  with JS
 //        JavascriptExecutor js = (JavascriptExecutor)BrowserClass.getDriver();
 //        js.executeScript("arguments[0].click()",element);
 
