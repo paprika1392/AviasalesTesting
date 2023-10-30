@@ -19,7 +19,6 @@ public class HomePageAviaSales {
     public final By clickDepartField = By.xpath("//div[@class='page-header --compact']//input[@placeholder='Depart']");
     public final By clickNext = By.xpath("//button[@class='calendar-navbar__button --next']");
     public final By firstData = By.xpath("//div[@aria-label='Fri Dec 01 2023']");
-    //public final By clickChooseSecondDate = By.xpath("//input[@placeholder='Return']");
     public final By secondDate = By.xpath("//div[@aria-label='Fri Dec 08 2023']");
     public final By clickPassengers = By.xpath("//div[@data-test-id='passengers-field']");
     public final By ButtonAddPassenger = By.xpath("//div[@data-test-id='passengers-adults-field']//a[contains(@class, 'increment')]");
@@ -65,12 +64,6 @@ public class HomePageAviaSales {
         BrowserClass.getDriver().findElement(firstData).click();
         return this;
     }
-
-//    public HomePageAviaSales clickReturnField() {
-//
-//        BrowserClass.getDriver().findElement(clickChooseSecondDate).click();
-//        return this;
-//    }
 
     public HomePageAviaSales chooseSecondDate () {
 
