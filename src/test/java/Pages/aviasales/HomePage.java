@@ -1,4 +1,4 @@
-package Pages;
+package Pages.aviasales;
 
 import UtilsClass.BrowserClass;
 import org.openqa.selenium.By;
@@ -8,7 +8,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class HomePageAviaSales {
+public class HomePage {
 
     public final By enterCityFrom = By.xpath("//input[@placeholder='From']");
     public final By enterCityTo = By.xpath("//input[@placeholder='To']");

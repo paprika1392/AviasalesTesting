@@ -1,16 +1,11 @@
-package Pages;
+package Pages.aviasales;
 
 import UtilsClass.BrowserClass;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.awt.*;
-
-public class SelectionOfTicketsPageAviaSales {
+public class TicketsPage {
 
     public final By waitWindowPriceAlert = By.xpath("//div[text()= \"Price alert\"]");
     public final By closeWindowPriceAlert = By.xpath("//span[text()= \"Close\"]/..");

@@ -1,15 +1,15 @@
 package Steps;
 
-import Pages.HomePageAviaSales;
-import Pages.SelectionOfTicketsPageAviaSales;
+import Pages.aviasales.HomePage;
+import Pages.aviasales.TicketsPage;
 import UtilsClass.BrowserClass;
 
 import static UtilsClass.Constants.Constants.URL_AVIASALES_HOME_PAGE;
 
 public class Steps {
 
-    public static HomePageAviaSales actionsOnTheHomePageAviasales = new HomePageAviaSales();
-    public static SelectionOfTicketsPageAviaSales actionsOnTheTicketsPageAviasales = new SelectionOfTicketsPageAviaSales();
+    public static HomePage actionsOnTheHomePageAviasales = new HomePage();
+    public static TicketsPage actionsOnTheTicketsPageAviasales = new TicketsPage();
 
 
 

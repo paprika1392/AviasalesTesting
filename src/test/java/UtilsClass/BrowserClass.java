@@ -1,16 +1,13 @@
 package UtilsClass;
 
-import Pages.HomePageAviaSales;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 
 import static UtilsClass.Configs.BrowserConfig.CLEAR_COOKIES_AND_STORAGE;
 import static UtilsClass.Configs.BrowserConfig.HOLD_BROWSER_OPEN;
-import static UtilsClass.Constants.Constants.IMP_WAIT;
 
 public class BrowserClass {
 

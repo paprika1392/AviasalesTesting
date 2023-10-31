@@ -1,14 +1,10 @@
 package Tests;
 
-import Pages.HomePageAviaSales;
-import Pages.SelectionOfTicketsPageAviaSales;
+import Pages.aviasales.HomePage;
+import Pages.aviasales.TicketsPage;
 import UtilsClass.BrowserClass;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
-import static UtilsClass.Configs.BrowserConfig.CLEAR_COOKIES_AND_STORAGE;
 import static UtilsClass.Constants.Constants.URL_AVIASALES_HOME_PAGE;
 
 public class BaseTest {
@@ -19,7 +15,7 @@ public class BaseTest {
         BrowserClass.webDriverStartWork();
         BrowserClass.openBrowser(URL_AVIASALES_HOME_PAGE);
 
-        HomePageAviaSales actionsHomePage = new HomePageAviaSales();
+        HomePage actionsHomePage = new HomePage();
         actionsHomePage.enterCityFromFly();
         actionsHomePage.enterCityToFly();
         actionsHomePage.clickDepartField();
@@ -34,7 +30,7 @@ public class BaseTest {
 
         BrowserClass.switchWindow(1);
 
-        SelectionOfTicketsPageAviaSales actionSelectionOfTicketsPage = new SelectionOfTicketsPageAviaSales();
+        TicketsPage actionSelectionOfTicketsPage = new TicketsPage();
         actionSelectionOfTicketsPage.openCurrentUrl();
         actionSelectionOfTicketsPage.waitPageLoaded();
         actionSelectionOfTicketsPage.waitOpenAndCloseWindowPriceAlert();
