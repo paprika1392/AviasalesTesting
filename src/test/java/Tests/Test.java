@@ -2,7 +2,8 @@ package Tests;
 
 public class Test {
 
-    public static void test() {
+    public Test test() {
+        return this;
 
     }
 }

@@ -21,31 +21,27 @@ public class SelectionOfTicketsPageAviaSales {
     public final By clickCreatePriceAlert = By.cssSelector(".direction-subscriptions__btn-subs");
     public final By durationElement = By.xpath("//div[contains(text(), 'Duration: ')]");
 
-    public static void openCurrentUrl() {
+
+    public void openCurrentUrl() {
         String strUrl = BrowserClass.getDriver().getCurrentUrl();
         System.out.println("Current URL is: " + strUrl);
 
     }
 
-    public SelectionOfTicketsPageAviaSales waitPageLoaded() {
+    public void waitPageLoaded() {
         WebDriverWait wait = new WebDriverWait(BrowserClass.getDriver(), 15);
         wait.until(ExpectedConditions.invisibilityOfElementLocated(waitPageLoaded));
-
-        return this;
     }
 
-    public SelectionOfTicketsPageAviaSales waitOpenAndCloseWindowPriceAlert() {
+    public void waitOpenAndCloseWindowPriceAlert() {
         WebDriverWait wait = new WebDriverWait(BrowserClass.getDriver(), 70);
         wait.until(ExpectedConditions.elementToBeClickable(waitWindowPriceAlert));
 
         BrowserClass.getDriver().findElement(closeWindowPriceAlert).click();
-
-        return this;
     }
 
 
-    public SelectionOfTicketsPageAviaSales clickSortingButton() {
-
+    public void clickSortingButton() {
         WebDriverWait wait = new WebDriverWait(BrowserClass.getDriver(), 20);
         wait.until(ExpectedConditions.elementToBeClickable(sortingButton));
         BrowserClass.getDriver().findElement(sortingButton).click();
@@ -56,21 +52,14 @@ public class SelectionOfTicketsPageAviaSales {
 //        WebElement element = BrowserClass.getDriver().findElement(sortingButton); // resolve  with JS
 //        JavascriptExecutor js = (JavascriptExecutor)BrowserClass.getDriver();
 //        js.executeScript("arguments[0].click()",element);
-
-        return this;
     }
 
-    public SelectionOfTicketsPageAviaSales clickTripDurationButton() {
+    public void clickTripDurationButton() {
         BrowserClass.getDriver().findElement(tripDurationButton).click();
-
-        return this;
     }
 
-    public SelectionOfTicketsPageAviaSales selectFastestTimeOnTickets() {
+    public void selectFastestTimeOnTickets() {
         BrowserClass.getDriver().findElements(durationElement);
-
-
-        return this;
     }
 
 }

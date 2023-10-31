@@ -32,7 +32,6 @@ public class BrowserClass {
 
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-
     }
 
 
@@ -56,14 +55,16 @@ public class BrowserClass {
         }
     }
 
-    public static ArrayList<String> switchToWindows(int index) {
 
+    public static ArrayList<String> getWindowHandles() {
         ArrayList<String> windowHandles = new ArrayList<String>();
         windowHandles.addAll(driver.getWindowHandles());
         System.out.println("Current window handles is: " + windowHandles);
-        driver.switchTo().window(windowHandles.get(index));
-
         return windowHandles;
+    }
 
+    public static void switchWindow(int index) {
+        ArrayList<String> currentHandles = getWindowHandles();
+        driver.switchTo().window(currentHandles.get(index));
     }
 }

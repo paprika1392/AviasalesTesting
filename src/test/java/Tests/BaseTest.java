@@ -9,10 +9,9 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 import static UtilsClass.Configs.BrowserConfig.CLEAR_COOKIES_AND_STORAGE;
+import static UtilsClass.Constants.Constants.URL_AVIASALES_HOME_PAGE;
 
 public class BaseTest {
-
-    private final String URL_AVIASALES_HOME_PAGE = "https://www.aviasales.ge/";
 
     @Test
     public void startWorkDriver() throws InterruptedException { //  setpropertys and driver manage
@@ -28,12 +27,12 @@ public class BaseTest {
         actionsHomePage.chooseFirstDate();
         actionsHomePage.chooseSecondDate();
         actionsHomePage.clickPassengersField();
-        actionsHomePage.clickAddPassengerButton();
+        actionsHomePage.clickButtonAddPassenger();
         actionsHomePage.clickSearchButton();
 
         Thread.sleep(5000);
 
-        BrowserClass.switchToWindows(1);
+        BrowserClass.switchWindow(1);
 
         SelectionOfTicketsPageAviaSales actionSelectionOfTicketsPage = new SelectionOfTicketsPageAviaSales();
         actionSelectionOfTicketsPage.openCurrentUrl();
