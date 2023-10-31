@@ -1,4 +1,4 @@
-package UtilsClass.Configs;
+package Utils.Configs;
 
 public class BrowserConfig {
 

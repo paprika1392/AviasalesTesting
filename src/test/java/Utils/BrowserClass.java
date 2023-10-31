@@ -1,4 +1,4 @@
-package UtilsClass;
+package Utils;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -6,8 +6,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.ArrayList;
 
-import static UtilsClass.Configs.BrowserConfig.CLEAR_COOKIES_AND_STORAGE;
-import static UtilsClass.Configs.BrowserConfig.HOLD_BROWSER_OPEN;
+import static Utils.Configs.BrowserConfig.CLEAR_COOKIES_AND_STORAGE;
+import static Utils.Configs.BrowserConfig.HOLD_BROWSER_OPEN;
 
 public class BrowserClass {
 

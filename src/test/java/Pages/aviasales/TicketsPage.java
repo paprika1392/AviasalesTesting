@@ -1,6 +1,6 @@
 package Pages.aviasales;
 
-import UtilsClass.BrowserClass;
+import Utils.BrowserClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;

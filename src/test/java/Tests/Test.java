@@ -1,9 +1,17 @@
 package Tests;
 
-public class Test {
+import Steps.Steps;
 
-    public Test test() {
-        return this;
+public class Test extends BaseTest {
 
+    @org.testng.annotations.Test
+    public void Test() {
+        Steps.clickAndEnterCityFromFlyAndToFly();
+        Steps.selectRoundTripDates();
+        Steps.selectCountOfPassengers();
+        Steps.searchForAvailableOptions();
+        Steps.switchToNextPageAndPrintCurrentUrl();
+        Steps.waitWhilePageIsLoaded();
+        Steps.selectTicketWithFastestFlight();
     }
 }

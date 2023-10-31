@@ -2,9 +2,9 @@ package Steps;
 
 import Pages.aviasales.HomePage;
 import Pages.aviasales.TicketsPage;
-import UtilsClass.BrowserClass;
+import Utils.BrowserClass;
 
-import static UtilsClass.Constants.Constants.URL_AVIASALES_HOME_PAGE;
+import static Utils.Constants.Constants.URL_AVIASALES_HOME_PAGE;
 
 public class Steps {
 
@@ -13,7 +13,7 @@ public class Steps {
 
 
 
-    public static void openCurrentBrowser() {
+    public static void startWorkBrowser() {
         BrowserClass.webDriverStartWork();
         BrowserClass.openBrowser(URL_AVIASALES_HOME_PAGE);
     }
@@ -52,6 +52,11 @@ public class Steps {
     public static void selectTicketWithFastestFlight() {
         actionsOnTheTicketsPageAviasales.clickTripDurationButton();
         actionsOnTheTicketsPageAviasales.selectFastestTimeOnTickets();
+    }
+
+    public static void clearCookiesAngCloseBrowser() throws InterruptedException {
+    BrowserClass.clearCookiesAndLocalStorage();
+    BrowserClass.closeChrome();
     }
 
 
