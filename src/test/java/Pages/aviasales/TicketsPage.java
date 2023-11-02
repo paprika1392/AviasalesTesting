@@ -10,7 +10,7 @@ public class TicketsPage {
     public final By waitWindowPriceAlert = By.xpath("//div[text()= \"Price alert\"]");
     public final By closeWindowPriceAlert = By.xpath("//span[text()= \"Close\"]/..");
     public final By waitPageLoaded = By.cssSelector(".loader__stripes");
-    public final By sortingButton = By.xpath("//div[text()='Sorting']/..");
+    public final By sortButton = By.xpath("//div[text()='Sort']/..");
     public final By tripDurationButton = By.xpath("//div[text()='Trip duration']");
     public final By buttonClosePriceAlert = By.xpath("//span[text()='Close']");
     public final By clickCreatePriceAlert = By.cssSelector(".direction-subscriptions__btn-subs");
@@ -38,8 +38,8 @@ public class TicketsPage {
 
     public void clickSortingButton() {
         WebDriverWait wait = new WebDriverWait(BrowserClass.getDriver(), 20);
-        wait.until(ExpectedConditions.elementToBeClickable(sortingButton));
-        BrowserClass.getDriver().findElement(sortingButton).click();
+        wait.until(ExpectedConditions.elementToBeClickable(sortButton));
+        BrowserClass.getDriver().findElement(sortButton).click();
 
 //        Actions act =  new Actions(BrowserClass.getDriver());
 //        act.moveToElement(BrowserClass.getDriver().findElement(sortingButton)).click().perform();

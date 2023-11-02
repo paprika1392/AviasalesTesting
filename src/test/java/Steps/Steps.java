@@ -20,12 +20,13 @@ public class Steps {
 
     public static void clickAndEnterCityFromFlyAndToFly() {
         actionsOnTheHomePageAviasales.clickCityFromFly();
-        actionsOnTheHomePageAviasales.enterCityToFly();
+        actionsOnTheHomePageAviasales.enterCityFromFly();
         actionsOnTheHomePageAviasales.enterCityToFly();
     }
 
     public static void selectRoundTripDates() {
-        actionsOnTheHomePageAviasales.clickButtonNextMouth();
+        actionsOnTheHomePageAviasales.clickDepartField();
+//        actionsOnTheHomePageAviasales.clickButtonNextMouth();
         actionsOnTheHomePageAviasales.chooseFirstDate();
         actionsOnTheHomePageAviasales.chooseSecondDate();
     }
@@ -50,6 +51,7 @@ public class Steps {
     }
 
     public static void selectTicketWithFastestFlight() {
+        actionsOnTheTicketsPageAviasales.clickSortingButton();
         actionsOnTheTicketsPageAviasales.clickTripDurationButton();
         actionsOnTheTicketsPageAviasales.selectFastestTimeOnTickets();
     }

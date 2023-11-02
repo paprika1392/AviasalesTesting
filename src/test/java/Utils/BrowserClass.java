@@ -1,5 +1,6 @@
 package Utils;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -25,7 +26,8 @@ public class BrowserClass {
 
 
     public static void webDriverStartWork() {
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver-win64/chromedriver.exe");
+//        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver-win64/chromedriver.exe"); // manual driver download
+        WebDriverManager.chromedriver().setup(); //automatic driver download
 
         driver = new ChromeDriver();
         driver.manage().window().maximize();
