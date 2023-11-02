@@ -51,6 +51,7 @@ public class Steps {
     }
 
     public static void selectTicketWithFastestFlight() {
+        actionsOnTheTicketsPageAviasales.findTripDurationButton();
         actionsOnTheTicketsPageAviasales.clickSortingButton();
         actionsOnTheTicketsPageAviasales.clickTripDurationButton();
         actionsOnTheTicketsPageAviasales.selectFastestTimeOnTickets();

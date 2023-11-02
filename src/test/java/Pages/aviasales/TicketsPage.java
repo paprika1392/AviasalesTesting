@@ -2,6 +2,8 @@ package Pages.aviasales;
 
 import Utils.BrowserClass;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -24,7 +26,7 @@ public class TicketsPage {
     }
 
     public void waitPageLoaded() {
-        WebDriverWait wait = new WebDriverWait(BrowserClass.getDriver(), 15);
+        WebDriverWait wait = new WebDriverWait(BrowserClass.getDriver(), 40);
         wait.until(ExpectedConditions.invisibilityOfElementLocated(waitPageLoaded));
     }
 
@@ -49,11 +51,24 @@ public class TicketsPage {
 //        js.executeScript("arguments[0].click()",element);
     }
 
+    public void findTripDurationButton() {
+        WebElement element = BrowserClass.getDriver().findElement(tripDurationButton);
+        JavascriptExecutor js = (JavascriptExecutor)BrowserClass.getDriver();
+        // Scrolling down the page till the element is found
+//        js.executeScript("arguments[0].scrollIntoView();", element);
+        // Scrolling down the page by pixels
+        js.executeScript("window.scrollBy(0,850)", "");
+    }
+
     public void clickTripDurationButton() {
+        WebDriverWait wait = new WebDriverWait(BrowserClass.getDriver(), 10);
+        wait.until(ExpectedConditions.elementToBeClickable(tripDurationButton));
         BrowserClass.getDriver().findElement(tripDurationButton).click();
     }
 
     public void selectFastestTimeOnTickets() {
+        WebDriverWait wait = new WebDriverWait(BrowserClass.getDriver(), 10);
+        wait.until(ExpectedConditions.elementToBeClickable(durationElement));
         BrowserClass.getDriver().findElements(durationElement);
     }
 
