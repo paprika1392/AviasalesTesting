@@ -1,6 +1,7 @@
 package Tests;
 
 import Steps.Steps;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 
@@ -12,7 +13,7 @@ public class BaseTest {
         Steps.clearCookies();
    }
 
-//   @AfterTest
+    @AfterTest
     public void finishWorkDriver() throws InterruptedException {
         Steps.closeBrowser();
    }
