@@ -2,7 +2,7 @@ package Steps;
 
 import Pages.aviasales.HomePage;
 import Pages.aviasales.TicketsPage;
-import Utils.BrowserClass;
+import Utils.Browser;
 
 import static Utils.Constants.Constants.URL_AVIASALES_HOME_PAGE;
 
@@ -13,13 +13,13 @@ public class Steps {
 
 
     public static void openBrowser() {
-        BrowserClass.webDriverStartWork();
-        BrowserClass.setUrl(URL_AVIASALES_HOME_PAGE);
-        BrowserClass.customizeBrowserWindow();
+        Browser.webDriverStartWork();
+        Browser.setUrl(URL_AVIASALES_HOME_PAGE);
+        Browser.customizeBrowserWindow();
     }
 
     public static void clearCookies() {
-        BrowserClass.clearCookiesAndLocalStorage();
+        Browser.clearCookiesAndLocalStorage();
     }
 
     public static void enterCityFromFly(String cityFrom) {
@@ -48,8 +48,8 @@ public class Steps {
     }
 
     public static void switchToPage(int index) {
-        BrowserClass.getWindowHandles();
-        BrowserClass.switchWindow(index);
+        Browser.getWindowHandles();
+        Browser.switchWindow(index);
     }
 
         public static void printCurrentUrl() {
@@ -69,7 +69,7 @@ public class Steps {
 
 
     public static void closeBrowser() throws InterruptedException {
-        BrowserClass.closeBrowser();
+        Browser.closeBrowser();
     }
 
 

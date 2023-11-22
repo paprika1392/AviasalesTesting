@@ -10,11 +10,11 @@ import java.util.ArrayList;
 import static Utils.Configs.BrowserConfig.CLEAR_COOKIES_AND_STORAGE;
 import static Utils.Configs.BrowserConfig.HOLD_BROWSER_OPEN;
 
-public class BrowserClass {
+public class Browser {
 
     private static WebDriver driver; //singlton
 
-    private BrowserClass() {   //singlton
+    private Browser() {   //singlton
     }
 
     public static WebDriver getDriver() { //singlton
