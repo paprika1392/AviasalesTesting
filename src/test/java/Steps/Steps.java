@@ -8,8 +8,8 @@ import static Utils.Constants.Constants.URL_AVIASALES_HOME_PAGE;
 
 public class Steps {
 
-    public static HomePage actionsOnTheHomePageAviasales = new HomePage();
-    public static TicketsPage actionsOnTheTicketsPageAviasales = new TicketsPage();
+    public static HomePage homePage = new HomePage();
+    public static TicketsPage ticketsPage = new TicketsPage();
 
 
     public static void openBrowser() {
@@ -23,28 +23,28 @@ public class Steps {
     }
 
     public static void enterCityFromFly(String cityFrom) {
-        actionsOnTheHomePageAviasales.clickCityFromFly();
-        actionsOnTheHomePageAviasales.enterCityFromFly(cityFrom);
+        homePage.clickCityFromFly();
+        homePage.enterCityFromFly(cityFrom);
     }
 
     public static void enterCityToFly(String cityTo) {
-        actionsOnTheHomePageAviasales.enterCityToFly(cityTo);
+        homePage.enterCityToFly(cityTo);
     }
 
     public static void selectRoundTripDates() {
-        actionsOnTheHomePageAviasales.clickDepartField();
+        homePage.clickDepartField();
 //        actionsOnTheHomePageAviasales.clickButtonNextMouth();
-        actionsOnTheHomePageAviasales.chooseFirstDate();
-        actionsOnTheHomePageAviasales.chooseSecondDate();
+        homePage.chooseFirstDate();
+        homePage.chooseSecondDate();
     }
 
     public static void selectCountOfPassengers() {
-        actionsOnTheHomePageAviasales.clickPassengersField();
-        actionsOnTheHomePageAviasales.clickButtonAddPassenger();
+        homePage.clickPassengersField();
+        homePage.clickButtonAddPassenger();
     }
 
     public static void searchForAvailableOptions() {
-        actionsOnTheHomePageAviasales.clickSearchButton();
+        homePage.clickSearchButton();
     }
 
     public static void switchToNextPage(int index) {
@@ -53,18 +53,18 @@ public class Steps {
     }
 
         public static void printCurrentUrl() {
-        actionsOnTheTicketsPageAviasales.getCurrentUrl();
+        ticketsPage.getCurrentUrl();
     }
 
     public static void waitWhilePageIsLoaded() {
-        actionsOnTheTicketsPageAviasales.waitPageLoaded();
+        ticketsPage.waitPageLoaded();
     }
 
     public static void selectTicketWithFastestFlight() {
-        actionsOnTheTicketsPageAviasales.findTripDurationButton();
-        actionsOnTheTicketsPageAviasales.clickSortingButton();
-        actionsOnTheTicketsPageAviasales.clickTripDurationButton();
-        actionsOnTheTicketsPageAviasales.selectFastestTimeOnTickets();
+        ticketsPage.findTripDurationButton();
+        ticketsPage.clickSortingButton();
+        ticketsPage.clickTripDurationButton();
+        ticketsPage.selectFastestTimeOnTickets();
     }
 
 
