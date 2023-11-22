@@ -47,7 +47,7 @@ public class Steps {
         homePage.clickSearchButton();
     }
 
-    public static void switchToNextPage(int index) {
+    public static void switchToPage(int index) {
         BrowserClass.getWindowHandles();
         BrowserClass.switchWindow(index);
     }

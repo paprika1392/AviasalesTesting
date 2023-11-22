@@ -11,7 +11,7 @@ public class Test extends BaseTest {
         Steps.selectRoundTripDates();
         Steps.addOnePassenger();
         Steps.clickSearchButton();
-        Steps.switchToNextPage(1);
+        Steps.switchToPage(1);
         Steps.printCurrentUrl();
         Steps.waitWhilePageIsLoaded();
         Steps.selectTicketWithFastestFlight();
