@@ -1,6 +1,5 @@
 package Pages.aviasales;
 
-import Utils.BrowserClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
