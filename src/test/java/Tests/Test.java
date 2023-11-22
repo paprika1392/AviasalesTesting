@@ -14,6 +14,6 @@ public class Test extends BaseTest {
         Steps.switchToPage(1);
         Steps.printCurrentUrl();
         Steps.waitWhilePageIsLoaded();
-        Steps.selectTicketWithFastestFlight();
+        Steps.printTicketWithFastestFlight();
     }
 }

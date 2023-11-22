@@ -60,11 +60,11 @@ public class Steps {
         ticketsPage.waitPageLoaded();
     }
 
-    public static void selectTicketWithFastestFlight() {
+    public static void printTicketWithFastestFlight() {
         ticketsPage.findTripDurationButton();
         ticketsPage.clickSortingButton();
         ticketsPage.clickTripDurationButton();
-        ticketsPage.selectFastestTimeOnTickets();
+        ticketsPage.printFastestTimeOnTickets();
     }
 
 
