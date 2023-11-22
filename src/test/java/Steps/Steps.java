@@ -12,16 +12,23 @@ public class Steps {
     public static TicketsPage actionsOnTheTicketsPageAviasales = new TicketsPage();
 
 
-
-    public static void startWorkBrowser() {
+    public static void openBrowser() {
         BrowserClass.webDriverStartWork();
-        BrowserClass.openBrowser(URL_AVIASALES_HOME_PAGE);
+        BrowserClass.setUrl(URL_AVIASALES_HOME_PAGE);
+        BrowserClass.customizeBrowserWindow();
     }
 
-    public static void clickAndEnterCityFromFlyAndToFly() {
+    public static void clearCookies() {
+        BrowserClass.clearCookiesAndLocalStorage();
+    }
+
+    public static void enterCityFromFly(String cityFrom) {
         actionsOnTheHomePageAviasales.clickCityFromFly();
-        actionsOnTheHomePageAviasales.enterCityFromFly();
-        actionsOnTheHomePageAviasales.enterCityToFly();
+        actionsOnTheHomePageAviasales.enterCityFromFly(cityFrom);
+    }
+
+    public static void enterCityToFly(String cityTo) {
+        actionsOnTheHomePageAviasales.enterCityToFly(cityTo);
     }
 
     public static void selectRoundTripDates() {
@@ -40,10 +47,13 @@ public class Steps {
         actionsOnTheHomePageAviasales.clickSearchButton();
     }
 
-    public static void switchToNextPageAndPrintCurrentUrl() {
+    public static void switchToNextPage(int index) {
         BrowserClass.getWindowHandles();
-        BrowserClass.switchWindow(1); // I can create instance and value of index, if need it
-        actionsOnTheTicketsPageAviasales.openCurrentUrl();
+        BrowserClass.switchWindow(index);
+    }
+
+        public static void printCurrentUrl() {
+        actionsOnTheTicketsPageAviasales.getCurrentUrl();
     }
 
     public static void waitWhilePageIsLoaded() {
@@ -57,9 +67,9 @@ public class Steps {
         actionsOnTheTicketsPageAviasales.selectFastestTimeOnTickets();
     }
 
-    public static void clearCookiesAngCloseBrowser() throws InterruptedException {
-    BrowserClass.clearCookiesAndLocalStorage();
-    BrowserClass.closeChrome();
+
+    public static void closeBrowser() throws InterruptedException {
+        BrowserClass.closeBrowser();
     }
 
 

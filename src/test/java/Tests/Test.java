@@ -6,11 +6,13 @@ public class Test extends BaseTest {
 
     @org.testng.annotations.Test
     public void Test() {
-        Steps.clickAndEnterCityFromFlyAndToFly();
+        Steps.enterCityFromFly("Tbilisi");
+        Steps.enterCityToFly("Yerevan");
         Steps.selectRoundTripDates();
         Steps.selectCountOfPassengers();
         Steps.searchForAvailableOptions();
-        Steps.switchToNextPageAndPrintCurrentUrl();
+        Steps.switchToNextPage(1);
+        Steps.printCurrentUrl();
         Steps.waitWhilePageIsLoaded();
         Steps.selectTicketWithFastestFlight();
     }

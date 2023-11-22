@@ -19,6 +19,7 @@ public class BrowserClass {
 
     public static WebDriver getDriver() { //singlton
         if (driver == null) {
+            WebDriverManager.chromedriver().setup(); //automatic driver download
             driver = new ChromeDriver();
         }
         return driver;
@@ -27,14 +28,15 @@ public class BrowserClass {
 
     public static void webDriverStartWork() {
 //        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver-win64/chromedriver.exe"); // manual driver download
-        WebDriverManager.chromedriver().setup(); //automatic driver download
+        getDriver();
+    }
 
-        driver = new ChromeDriver();
+    public static void customizeBrowserWindow() {
         driver.manage().window().maximize();
     }
 
 
-    public static void openBrowser(String url) {
+    public static void setUrl(String url) {
         driver.get(url);
     }
 
@@ -46,9 +48,7 @@ public class BrowserClass {
         }
     }
 
-    public static void closeChrome() throws InterruptedException {
-        Thread.sleep(5000); // Use only for DEBUG
-
+    public static void closeBrowser() throws InterruptedException {
         if (HOLD_BROWSER_OPEN) {
             driver.quit();
         }
