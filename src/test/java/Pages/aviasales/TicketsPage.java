@@ -49,7 +49,7 @@ public class TicketsPage extends BasePage {
 //        js.executeScript("arguments[0].click()",element);
     }
 
-    public void findTripDurationButton() {
+    public void scrollWhileFindSortButton() {
         // Scrolling down the page till the element is found
 //        js.executeScript("arguments[0].scrollIntoView();", element);
 //        WebElement element = driver.findElement(tripDurationButton);

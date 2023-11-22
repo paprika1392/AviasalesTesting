@@ -61,7 +61,7 @@ public class Steps {
     }
 
     public static void printTicketWithFastestFlight() {
-        ticketsPage.findTripDurationButton();
+        ticketsPage.scrollWhileFindSortButton();
         ticketsPage.clickSortingButton();
         ticketsPage.clickTripDurationButton();
         ticketsPage.printFastestTimeOnTickets();
