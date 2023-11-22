@@ -48,7 +48,7 @@ public class Browser {
         }
     }
 
-    public static void closeBrowser() throws InterruptedException {
+    public static void closeBrowser() {
         if (HOLD_BROWSER_OPEN) {
             driver.quit();
         }
