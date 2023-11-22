@@ -1,26 +1,25 @@
-package UtilsClass;
+package Utils;
 
-import Pages.HomePageAviaSales;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 
-import static UtilsClass.Configs.BrowserConfig.CLEAR_COOKIES_AND_STORAGE;
-import static UtilsClass.Configs.BrowserConfig.HOLD_BROWSER_OPEN;
-import static UtilsClass.Constants.Constants.IMP_WAIT;
+import static Utils.Configs.BrowserConfig.CLEAR_COOKIES_AND_STORAGE;
+import static Utils.Configs.BrowserConfig.HOLD_BROWSER_OPEN;
 
-public class BrowserClass {
+public class Browser {
 
     private static WebDriver driver; //singlton
 
-    private BrowserClass() {   //singlton
+    private Browser() {   //singlton
     }
 
     public static WebDriver getDriver() { //singlton
         if (driver == null) {
+            WebDriverManager.chromedriver().setup(); //automatic driver download
             driver = new ChromeDriver();
         }
         return driver;
@@ -28,16 +27,16 @@ public class BrowserClass {
 
 
     public static void webDriverStartWork() {
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver-win64/chromedriver.exe");
+//        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver-win64/chromedriver.exe"); // manual driver download
+        getDriver();
+    }
 
-        driver = new ChromeDriver();
+    public static void customizeBrowserWindow() {
         driver.manage().window().maximize();
-//        driver.manage().timeouts().implicitlyWait(IMP_WAIT, TimeUnit.SECONDS);
-
     }
 
 
-    public static void openBrowser(String url) {
+    public static void setUrl(String url) {
         driver.get(url);
     }
 
@@ -49,22 +48,22 @@ public class BrowserClass {
         }
     }
 
-    public static void closeChrome() throws InterruptedException {
-        Thread.sleep(5000); // Use only for DEBUG
-
+    public static void closeBrowser() {
         if (HOLD_BROWSER_OPEN) {
             driver.quit();
         }
     }
 
-    public static ArrayList<String> switchToWindows(int index) {
 
+    public static ArrayList<String> getWindowHandles() {
         ArrayList<String> windowHandles = new ArrayList<String>();
         windowHandles.addAll(driver.getWindowHandles());
         System.out.println("Current window handles is: " + windowHandles);
-        driver.switchTo().window(windowHandles.get(index));
-
         return windowHandles;
+    }
 
+    public static void switchWindow(int index) {
+        ArrayList<String> currentHandles = getWindowHandles();
+        driver.switchTo().window(currentHandles.get(index));
     }
 }
