@@ -38,12 +38,12 @@ public class Steps {
         homePage.chooseSecondDate();
     }
 
-    public static void selectCountOfPassengers() {
+    public static void addOnePassenger() {
         homePage.clickPassengersField();
         homePage.clickButtonAddPassenger();
     }
 
-    public static void searchForAvailableOptions() {
+    public static void clickSearchButton() {
         homePage.clickSearchButton();
     }
 

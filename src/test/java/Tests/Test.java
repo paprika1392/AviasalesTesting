@@ -9,8 +9,8 @@ public class Test extends BaseTest {
         Steps.enterCityFromFly("Tbilisi");
         Steps.enterCityToFly("Yerevan");
         Steps.selectRoundTripDates();
-        Steps.selectCountOfPassengers();
-        Steps.searchForAvailableOptions();
+        Steps.addOnePassenger();
+        Steps.clickSearchButton();
         Steps.switchToNextPage(1);
         Steps.printCurrentUrl();
         Steps.waitWhilePageIsLoaded();
