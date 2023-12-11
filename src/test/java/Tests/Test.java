@@ -5,7 +5,7 @@ import Steps.Steps;
 public class Test extends BaseTest {
 
     @org.testng.annotations.Test
-    public void Test() {
+    public void TestAviasales() {
         Steps.enterCityFromFly("Tbilisi");
         Steps.enterCityToFly("Yerevan");
         Steps.selectRoundTripDates();

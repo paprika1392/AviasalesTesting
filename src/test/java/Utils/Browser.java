@@ -7,8 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.ArrayList;
 
-import static Utils.Configs.BrowserConfig.CLEAR_COOKIES_AND_STORAGE;
-import static Utils.Configs.BrowserConfig.HOLD_BROWSER_OPEN;
+import static Utils.Configs.BrowserConfig.*;
 
 public class Browser {
 
@@ -35,7 +34,6 @@ public class Browser {
         driver.manage().window().maximize();
     }
 
-
     public static void setUrl(String url) {
         driver.get(url);
     }
@@ -49,7 +47,7 @@ public class Browser {
     }
 
     public static void closeBrowser() {
-        if (HOLD_BROWSER_OPEN) {
+        if (!HOLD_BROWSER_OPEN) {
             driver.quit();
         }
     }

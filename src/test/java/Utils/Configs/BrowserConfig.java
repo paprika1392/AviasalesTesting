@@ -3,7 +3,7 @@ package Utils.Configs;
 public class BrowserConfig {
 
     /**
-     * Clear browser cookies and after each iteration
+     * Clear browser cookies after each iteration
      * If true - clear cookies
      */
 
@@ -11,8 +11,8 @@ public class BrowserConfig {
 
     /**
      * To keep the brother open after suite
-     * if true - browser close
+     * if false - close browser
      */
 
-    public static final boolean HOLD_BROWSER_OPEN = true;
+    public static final boolean HOLD_BROWSER_OPEN = false;
 }
