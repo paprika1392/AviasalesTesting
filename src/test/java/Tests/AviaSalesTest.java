@@ -1,11 +1,12 @@
 package Tests;
 
 import Steps.Steps;
+import org.testng.annotations.Test;
 
-public class Test extends BaseTest {
+public class AviaSalesTest extends BaseTest {
 
-    @org.testng.annotations.Test
-    public void TestAviasales() {
+    @Test
+    public void testAviaSales() {
         Steps.enterCityFromFly("Tbilisi");
         Steps.enterCityToFly("Yerevan");
         Steps.selectRoundTripDates();
