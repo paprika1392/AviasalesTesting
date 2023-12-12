@@ -1,24 +1,23 @@
 package Pages.aviasales;
 
+import Utils.Browser;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage extends BasePage {
 
     public final By enterCityFrom = By.xpath("//input[@placeholder='From']");
     public final By enterCityTo = By.xpath("//input[@placeholder='To']");
     public final By loadHomePage = By.cssSelector(".--explore");
-    public final By clickDepartField = By.xpath("//div[@class='page-header --compact']//input[@placeholder='Depart']");
+    public final By clickDepartField = By.xpath("//button[@data-test-id='start-date-field']");
     public final By clickNext = By.xpath("//button[@class='calendar-navbar__button --next']");
-    public final By firstData = By.xpath("//div[@class='calendar__day-cell today']"); //always selects today's date
-    public final By secondDate = By.xpath("(//div[@class='calendar__month'][2]//div[@class='calendar-day'])[1]");//always selects first date of next month
-    public final By clickPassengers = By.xpath("//div[@data-test-id='passengers-field']");
-    public final By ButtonAddPassenger = By.xpath("//div[@data-test-id='passengers-adults-field']//a[contains(@class, 'increment')]");
-    public final By buttonSearch = By.xpath("//div[@class='avia-form__submit']//div[text()='Search flights']");
+    public final By firstData = By.xpath("//div[contains(@class,'today')]"); //always selects today's date
+    public final By secondDate = By.xpath("(//div[@role='grid'][2]//div[@role='gridcell'])[1]");//always selects first date of next month
+    public final By clickPassengers = By.xpath("//div[text()='1 passenger']");
+    public final By ButtonAddAdult = By.xpath("//div[@data-test-id='number-of-adults']//button[@data-test-id='increase-button']");
+    public final By buttonSearch = By.xpath("//button[@data-test-id='form-submit']");
 
 
     public void clickCityFromFly() {
@@ -35,8 +34,7 @@ public class HomePage extends BasePage {
     }
 
     public void clickDepartField() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(clickDepartField));
+        Browser.waitUntilElemToBeClickable(clickDepartField);
 
         WebElement element = driver.findElement(clickDepartField);
         JavascriptExecutor js = (JavascriptExecutor)driver;
@@ -55,8 +53,7 @@ public class HomePage extends BasePage {
     }
 
     public void chooseSecondDate () {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(secondDate));
+//        Browser.waitUntilElemToBeClickable(secondDate);
         driver.findElement(secondDate).click();
     }
 
@@ -65,7 +62,7 @@ public class HomePage extends BasePage {
     }
 
     public void clickButtonAddPassenger() {
-        driver.findElement(ButtonAddPassenger).click();
+        driver.findElement(ButtonAddAdult).click();
     }
 
     public void clickSearchButton() {

@@ -1,5 +1,6 @@
 package Pages.aviasales;
 
+import Utils.Browser;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -29,16 +30,14 @@ public class TicketsPage extends BasePage {
     }
 
     public void waitOpenAndCloseWindowPriceAlert() {
-        WebDriverWait wait = new WebDriverWait(driver, 70);
-        wait.until(ExpectedConditions.elementToBeClickable(windowPriceAlert));
+        Browser.waitUntilElemToBeClickable(windowPriceAlert);
 
         driver.findElement(closeWindowPriceAlert).click();
     }
 
 
     public void clickSortingButton() {
-        WebDriverWait wait = new WebDriverWait(driver, 20);
-        wait.until(ExpectedConditions.elementToBeClickable(sortButton));
+        Browser.waitUntilElemToBeClickable(sortButton);
         driver.findElement(sortButton).click();
 
 //        Actions act =  new Actions(driver);
@@ -59,14 +58,12 @@ public class TicketsPage extends BasePage {
     }
 
     public void clickTripDurationButton() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(tripDurationButton));
+        Browser.waitUntilElemToBeClickable(tripDurationButton);
         driver.findElement(tripDurationButton).click();
     }
 
     public void printFastestTimeOnTickets() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(durationElement));
+        Browser.getWebDriverWait().until(ExpectedConditions.visibilityOfElementLocated(durationElement));
         String fastestTime = driver.findElement(durationElement).getText();
         System.out.println("The fastest time of flight is: " + fastestTime);
     }

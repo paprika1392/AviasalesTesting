@@ -1,9 +1,12 @@
 package Utils;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
 
@@ -63,5 +66,15 @@ public class Browser {
     public static void switchWindow(int index) {
         ArrayList<String> currentHandles = getWindowHandles();
         driver.switchTo().window(currentHandles.get(index));
+    }
+
+
+    public static WebDriverWait getWebDriverWait() {
+        WebDriverWait wait = new WebDriverWait(driver, 20);
+        return wait;
+    }
+
+    public static void waitUntilElemToBeClickable(By locator) {
+        getWebDriverWait().until(ExpectedConditions.elementToBeClickable(locator));
     }
 }
