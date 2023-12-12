@@ -41,6 +41,13 @@
             <version>2.20.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>2.13.7</version> <!-- Check for the latest version on Maven Central -->
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
 <!--> https://software-testing.org/automation-testing/nastroyka-testng-selenium-webdriver-i-maven-surefire-plugin-s-pomoschyu-pomxml.html -->
@@ -56,6 +63,17 @@
                         <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
                     </suiteXmlFiles> </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.10.0</version> <!-- Check for the latest version on Maven Central -->
+                <configuration>
+                    <reportVersion>2.13.7</reportVersion> <!-- Check for the latest version on Maven Central -->
+                    <resultsDirectory>${project.build.directory}/allure-results</resultsDirectory>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 
